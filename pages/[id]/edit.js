@@ -27,13 +27,16 @@ const EditHero = ({ hero }) => {
     e.preventDefault();
 
     try {
-      await Axios(`http://127.0.0.1:3000/api/hero/${heroId}`, {
-        method: `PUT`,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: JSON.stringify(formIn),
-      });
+      await Axios(
+        `https://next-app-e5xwm22x4-sabajivikas.vercel.app/${heroId}`,
+        {
+          method: `PUT`,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          data: JSON.stringify(formIn),
+        }
+      );
 
       Router.push(`/`);
     } catch (error) {
@@ -73,7 +76,9 @@ const EditHero = ({ hero }) => {
 export const getServerSideProps = async ({ params }) => {
   const { id } = params;
 
-  const response = await Axios(`http://127.0.0.1:3000/api/hero/${id}`);
+  const response = await Axios(
+    `https://next-app-e5xwm22x4-sabajivikas.vercel.app/${id}`
+  );
   // console.log(response.data.hero);
 
   return {

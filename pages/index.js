@@ -54,7 +54,9 @@ const Home = ({ heros }) => {
 // };
 
 export const getServerSideProps = async () => {
-  const response = await Axios("http://127.0.0.1:3000/api/hero");
+  const response = await Axios(
+    "https://next-app-e5xwm22x4-sabajivikas.vercel.app/hero"
+  );
   // console.log(response.data.hero);
 
   return {

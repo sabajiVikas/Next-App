@@ -20,9 +20,12 @@ const UniHero = ({ hero }) => {
 
   const deleteHero = async () => {
     try {
-      await Axios(`http://127.0.0.1:3000/api/hero/${heroId}`, {
-        method: `DELETE`,
-      });
+      await Axios(
+        `https://next-app-e5xwm22x4-sabajivikas.vercel.app/${heroId}`,
+        {
+          method: `DELETE`,
+        }
+      );
 
       Router.push(`/`);
     } catch (error) {
@@ -63,7 +66,9 @@ const UniHero = ({ hero }) => {
 export const getServerSideProps = async ({ params }) => {
   const { id } = params;
 
-  const response = await Axios(`http://127.0.0.1:3000/api/hero/${id}`);
+  const response = await Axios(
+    `https://next-app-e5xwm22x4-sabajivikas.vercel.app/${id}`
+  );
   // console.log(response.data.hero);
 
   return {
