@@ -4,7 +4,7 @@ const nextConfig = {
 
   // NextJS Way
   env: {
-    MONGO_URI: `mongodb://127.0.0.1:27017/superHeros`,
+    MONGO_URI: `mongodb+srv://vikas:Vikas123@cluster0.loynd.mongodb.net/superHeros?retryWrites=true&w=majority`,
   },
 };
 
